@@ -3,13 +3,12 @@ import 'package:tugas2/data/cats.dart';
 import 'package:tugas2/pages/detail_page.dart';
 
 class CatListPage extends StatelessWidget {
-  
   const CatListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 148, 206, 186),
+        backgroundColor: const Color.fromARGB(255, 148, 206, 186),
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(221, 11, 114, 76),
           centerTitle: true,
@@ -39,9 +38,9 @@ class CatListPage extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
-          //border: Border.all(width: 1),
-          borderRadius: BorderRadius.circular(10),
-          color: const Color.fromARGB(221, 11, 114, 76)),
+            //border: Border.all(width: 1),
+            borderRadius: BorderRadius.circular(10),
+            color: const Color.fromARGB(221, 11, 114, 76)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -56,22 +55,29 @@ class CatListPage extends StatelessWidget {
               catList[index].name,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
-            Text(
-              catList[index].age.toString(),
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              catList[index].sex,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              catList[index].breed,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-            ),
+            //TULISAN KESAMPING BUKAN KEBAWAH MAKANYA PAKE ROW
+            Row(
+              mainAxisAlignment:
+                  MainAxisAlignment.center, 
+              children: [
+                Text(
+                  catList[index].age.toString(),
+                ),
+                Text(" | "),
+                Text(
+                  catList[index].sex,
+                ),
+                Text(" | "),
+                Text(
+                  catList[index].breed,
+                ),
+              ],
+            )
           ],
         ),
       ),
