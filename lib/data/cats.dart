@@ -1,4 +1,4 @@
-import 'Cat.dart';
+import '../model/Cat.dart';
 
 List<Cat> catList = [
   Cat(
