@@ -45,7 +45,7 @@ class CatListPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Expanded(
-              child: Image.network(
+              child: Image.network( 
                 catList[index].pictureUrl,
                 fit: BoxFit.cover,
               ),
